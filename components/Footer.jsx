@@ -1,0 +1,82 @@
+import Link from "next/link";
+import { FiFacebook, FiTwitter, FiLinkedin } from "react-icons/fi";
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+
+import CenterWrapper from "./shared/CenterWrapper";
+
+export default function Footer({
+    footerNvData,
+    footerSocialData,
+    copyWrightText,
+}) {
+    return (
+        <section className="pt-8 pb-8 text-white bg-neutral-900 lg:pt-14">
+            <CenterWrapper>
+                <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-y-1"></section>
+            </CenterWrapper>
+            <CenterWrapper>
+                <section className="flex flex-col items-center">
+                    <div>
+                        <section className="flex mb-10 space-x-3 ">
+                            {footerSocialData.map((item, index) => {
+                                if (item.name === "facebook" && item.href) {
+                                    return (
+                                        <Link href={item.href} key={index}>
+                                            <a className="grid transition rounded-full place-items-center border p-1.5">
+                                                <FaFacebookF className="w-5 h-5 text-sky-100" />
+                                            </a>
+                                        </Link>
+                                    );
+                                } else if (
+                                    item.name === "twitter" &&
+                                    item.href
+                                ) {
+                                    return (
+                                        <Link href={item.href} key={index}>
+                                            <a className="grid  transition rounded-full  place-items-center border p-1.5">
+                                                <FaTwitter className="w-5 h-5 text-sky-100" />
+                                            </a>
+                                        </Link>
+                                    );
+                                } else if (
+                                    item.name === "linkedin" &&
+                                    item.href
+                                ) {
+                                    return (
+                                        <Link href={item.href} key={index}>
+                                            <a className="grid  transition rounded-full  place-items-center border p-1.5">
+                                                <FaLinkedinIn className="w-5 h-5 text-sky-100" />
+                                            </a>
+                                        </Link>
+                                    );
+                                }
+                            })}
+                        </section>
+                    </div>
+                    <div>
+                        {footerNvData.length > 0 && (
+                            <ul className="flex space-x-6 mb-4 list-disc">
+                                {footerNvData.map((item, index) => {
+                                    return (
+                                        <li key={index} className="">
+                                            <Link href={item.href}>
+                                                <a className="capitalize text-sm">
+                                                    {item.title}
+                                                </a>
+                                            </Link>
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        )}
+                    </div>
+                    <div>
+                        <p className="text-sm text-white capitalize">
+                            {copyWrightText}
+                        </p>
+                    </div>
+                </section>
+            </CenterWrapper>
+        </section>
+    );
+}
