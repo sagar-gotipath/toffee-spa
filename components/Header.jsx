@@ -58,7 +58,7 @@ export default function Header({ logo, navData = [], headerButtons = [] }) {
     return (
         <>
             <header
-                className="sticky top-0 z-50 w-full px-0 py-1 leading-none transition duration-300 bg-white shadow-md"
+                className="fixed top-0 z-50 w-full px-0 py-1 leading-none transition duration-300 bg-white shadow-md"
                 ref={headerContainerRef}
             >
                 {/* Desktop Navigation */}
