@@ -11,26 +11,26 @@ export default function PromotionSection({ title, promoTionData = [] }) {
                     <article>
                         <Title>{title}</Title>
                     </article>
-                    <div className="rounded-lg">
+                    <div className="">
                         <Tab.Group as="div" className="flex">
-                            <Tab.List className="flex flex-col flex-1">
+                            <Tab.List className="flex flex-col flex-1 ">
                                 {promoTionData.map((item, index) => {
                                     return (
                                         <Tab
                                             key={index}
                                             className={({ selected }) =>
-                                                selected ? "outline-none" : ""
+                                                selected ? "outline-none " : ""
                                             }
                                         >
                                             {({ selected }) => (
                                                 <article
                                                     className={clsx(
-                                                        "py-8 px-4 border-b-2 border-zinc-700 last:bottom-0 transition-all relative",
+                                                        " py-8 px-4 border-b-2 border-zinc-700 last:bottom-0 transition-all relative",
                                                         selected
-                                                            ? "bg-black border-l-8 border-b-zinc-700 border-pink-500"
+                                                            ? "bg-black border-l-[6px] border-b-zinc-700 border-pink-500"
                                                             : "bg-neutral-800",
                                                         selected &&
-                                                            "before:left-full before:content-[''] before:absolute before:border-t-[15px] before:border-t-transparent before:border-l-[24px] before:border-l-black before:border-b-[15px] before:border-b-transparent before:top-1/2 before:-translate-y-1/2"
+                                                            "before:left-full before:content-[''] before:absolute before:border-t-[12px] before:border-t-transparent before:border-l-[20px] before:border-l-black before:border-b-[12px] before:border-b-transparent before:top-1/2 before:-translate-y-1/2"
                                                     )}
                                                 >
                                                     <h4 className="text-white text-left">

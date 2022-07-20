@@ -43,6 +43,7 @@ export default function Home() {
                 btnLink="https://www.gotipath.com"
                 image="/assets/images/feature_1.png"
                 isReversed={true}
+                isFile={true}
                 icon="/assets/images/cameraTxt.png"
             ></FeatureOneWrapper>
 

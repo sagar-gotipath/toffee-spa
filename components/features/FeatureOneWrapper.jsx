@@ -35,16 +35,14 @@ export default function FeatureOneWrapper({
                         <p className="mb-4">{description}</p>
                         {isFile ? (
                             <form action="yourScript">
-                                <input
-                                    type="file"
-                                    id="myFile"
-                                    name="filename"
-                                />
-                                <input type="submit" />
+                                <input type="file" id="actual-btn" hidden />
+                                <label for="actual-btn" className="upload_btn">
+                                    {btnText}
+                                </label>
                             </form>
                         ) : (
                             <Link href={btnLink}>
-                                <a className="text-white bg-pink-400 rounded-full w-16 px-8 py-2">
+                                <a className="text-white bg-pink-400 rounded-full w-16 px-8 py-2 cursor-pointer">
                                     {btnText}
                                 </a>
                             </Link>
