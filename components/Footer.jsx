@@ -10,7 +10,7 @@ export default function Footer({
     copyWrightText,
 }) {
     return (
-        <section className="pt-8 pb-8 text-white bg-neutral-900 lg:pt-14">
+        <section className="py-8 text-white bg-neutral-900 lg:pt-14">
             <CenterWrapper>
                 <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-y-1"></section>
             </CenterWrapper>
@@ -55,12 +55,12 @@ export default function Footer({
                     </div>
                     <div>
                         {footerNvData.length > 0 && (
-                            <ul className="flex space-x-6 mb-4 list-disc">
+                            <ul className="flex flex-col mb-4 list-disc lg:space-x-6 lg:flex-row">
                                 {footerNvData.map((item, index) => {
                                     return (
                                         <li key={index} className="">
                                             <Link href={item.href}>
-                                                <a className="capitalize text-sm">
+                                                <a className="text-sm capitalize">
                                                     {item.title}
                                                 </a>
                                             </Link>
@@ -71,7 +71,7 @@ export default function Footer({
                         )}
                     </div>
                     <div>
-                        <p className="text-sm text-white capitalize">
+                        <p className="text-sm text-center text-white capitalize">
                             {copyWrightText}
                         </p>
                     </div>

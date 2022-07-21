@@ -12,20 +12,22 @@ export default function GuideLinesSection({
             <CenterWrapper>
                 <section>
                     <Title>{title}</Title>
-                    <p className="text-center lg:w-4/6 lg:mx-auto mb-10">
+                    <p className="mb-10 text-center lg:w-4/6 lg:mx-auto">
                         {description}
                     </p>
                 </section>
-                <section className="grid grid-cols-3 gap-6 ">
+                <section className="grid grid-cols-1 gap-6 lg:grid-cols-3">
                     {guideLines.map((item, index) => {
                         return (
                             <div
-                                className="shadow-md bg-pink-50 rounded-lg relative  overflow-hidden group cursor-pointer"
+                                className="relative overflow-hidden rounded-lg shadow-md cursor-pointer bg-pink-50 group"
                                 key={index}
                             >
                                 <article className="p-5">
                                     <h4 className="mb-3">{item.title}</h4>
-                                    <p className="mb-14">{item.description}</p>
+                                    <p className="mb-3 lg:mb-14">
+                                        {item.description}
+                                    </p>
                                 </article>
                                 <section className="bg-white absolute inset-0 opacity-100 group-hover:opacity-0 group-hover:z-[0] transition-all duration-300">
                                     <img
