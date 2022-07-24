@@ -13,7 +13,11 @@ export default function FaqWrapper({ faqs, title }) {
         </CenterWrapper>
 
         <section className="relative w-full max-w-2xl px-4 mx-auto ">
-          <img src="/assets/images/faq_icon.png" alt="faq icon " className="absolute -top-[90px] -left-[80px] -z-10" />
+          <img
+            src="/assets/images/faq_icon.png"
+            alt="faq icon"
+            className="absolute lg:-top-[90px] lg:-left-[80px] -z-10 w-16 h-auto lg:w-32 left-[0px] -top-[65px]"
+          />
           {faqs.map((item, index) => {
             return (
               <Disclosure key={index} as="div" className="flex flex-col">

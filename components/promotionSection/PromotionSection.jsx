@@ -21,7 +21,7 @@ export default function PromotionSection({ title, promoTionData = [] }) {
                         {({ selected }) => (
                           <article
                             className={clsx(
-                              'px-4 py-8 transition-all relative border-l-4  border-y border-neutral-700',
+                              'px-4 py-6  relative border-l-4 transition duration-200 border-y border-neutral-700',
                               selected ? 'bg-black border-l-pink-600' : 'bg-neutral-800 border-l-transparent',
                               selected &&
                                 "before:left-full before:content-[''] before:absolute before:border-t-[12px] before:border-t-transparent before:border-l-[20px] before:border-l-black before:border-b-[12px] before:border-b-transparent before:top-1/2 before:-translate-y-1/2"
@@ -41,7 +41,7 @@ export default function PromotionSection({ title, promoTionData = [] }) {
                   {promoTionData.map((item, index) => {
                     return (
                       <Tab.Panel key={index}>
-                        <img src={item.image} alt="promotion image" className="w-full h-[488px] object-cover" />
+                        <img src={item.image} alt="promotion image" className="w-full h-[505px] object-cover" />
                       </Tab.Panel>
                     )
                   })}
