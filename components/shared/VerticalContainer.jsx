@@ -1,3 +1,3 @@
 export default function VerticalContainer({ children }) {
-  return <section className="py-14">{children}</section>
+  return <section className="py-16">{children}</section>
 }

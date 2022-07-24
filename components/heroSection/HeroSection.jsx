@@ -14,7 +14,12 @@ export default function HeroSection({ title, descriptions, heroImage }) {
           </div>
           <div className="flex-1">
             <div className="absolute bottom-0 lg:top-0 lg:right-0">
-              <img src={heroImage || '/assets/images/Vector.gif'} alt="hero section image " className="w-full " />
+              <img
+                src={heroImage || '/assets/images/Vector_2.gif'}
+                alt="hero section image "
+                className="absolute inset-0 w-full"
+              />
+              <img src={'/assets/images/hero_2.png'} alt="hero section image " className="w-full " />
             </div>
           </div>
         </section>

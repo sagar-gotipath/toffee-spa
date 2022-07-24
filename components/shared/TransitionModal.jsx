@@ -3,7 +3,7 @@ import { FiXCircle } from 'react-icons/fi'
 import { Fragment, useState, useRef } from 'react'
 import Loader from '../shared/Loader'
 
-export default function TransitionModal({ onClose, isOpen, children }) {
+export default function TransitionModal({ onClose, isOpen, children, isLoaderNeeded }) {
   // video player options and functions
 
   return (
@@ -39,7 +39,8 @@ export default function TransitionModal({ onClose, isOpen, children }) {
                       className="w-10 h-10 pb-1.5 ml-auto md:-mr-8 mr-0 text-white cursor-pointer"
                       onClick={onClose}
                     />
-                    <Loader />
+                    {isLoaderNeeded !== false && <Loader />}
+
                     <div className="">{children}</div>
                   </div>
                 </Dialog.Panel>

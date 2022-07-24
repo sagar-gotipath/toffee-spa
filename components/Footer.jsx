@@ -13,29 +13,29 @@ export default function Footer({ footerNvData, footerSocialData, copyWrightText 
             <section className="flex mb-6 space-x-3 lg:mb-10 ">
               {footerSocialData.map((item, index) => {
                 return (
-                  <>
+                  <div key={index}>
                     {item.name === 'facebook' && item.href && (
-                      <Link href={item.href} key={index}>
+                      <Link href={item.href}>
                         <a className="grid w-6 h-6 transition border rounded-full place-items-center">
                           <FaFacebookF className="w-3.5 h-3.5 text-sky-100" />
                         </a>
                       </Link>
                     )}
                     {item.name === 'twitter' && item.href && (
-                      <Link href={item.href} key={index}>
+                      <Link href={item.href}>
                         <a className="grid w-6 h-6 transition border rounded-full place-items-center">
                           <FaTwitter className=" text-sky-100 w-3.5 h-3.5" />
                         </a>
                       </Link>
                     )}
                     {item.name === 'linkedin' && item.href && (
-                      <Link href={item.href} key={index}>
+                      <Link href={item.href}>
                         <a className="grid w-6 h-6 transition border rounded-full place-items-center">
                           <FaLinkedinIn className=" text-sky-100 w-3.5 h-3.5" />
                         </a>
                       </Link>
                     )}
-                  </>
+                  </div>
                 )
               })}
             </section>

@@ -13,17 +13,25 @@ export default function LearnAndEarn({ title, description, slides = [] }) {
   return (
     <section className="bg-pink-50">
       <VerticalContainer>
-        <section className="grid grid-cols-1 lg:grid-cols-4 lg:pl-[200px] ">
+        <section className="">
+          <article className="">
+            <h2 className="mb-6">{title}</h2>
+            <p>{description}</p>
+          </article>
+          <div className="">
+            <Slider slides={slides} title={title} description={description}></Slider>
+          </div>
+        </section>
+        {/* <section className="grid grid-cols-1 lg:grid-cols-4 lg:pl-[200px]">
           <article className="px-4 mb-10 lg:col-span-1 lg:px-0 lg:pr-5 lg:mb-0">
             <h2 className="mb-6">{title}</h2>
             <p>{description}</p>
           </article>
-          <div className=" lg:col-span-3">
-            <div className="">
-              <Slider slides={slides} title={title} description={description}></Slider>
-            </div>
+
+          <div className="lg:col-span-3">
+            <Slider slides={slides} title={title} description={description}></Slider>
           </div>
-        </section>
+        </section> */}
       </VerticalContainer>
     </section>
   )
@@ -71,16 +79,14 @@ function Slider({ slides, title, description }) {
       >
         {slides.map((item, index) => {
           return (
-            <>
-              <SwiperSlide key={index} className="cursor-pointer ">
-                <SlideCard
-                  image={item.image}
-                  instructorName={item.instructorName}
-                  modalContent={item.videoSrc}
-                  title={item.title}
-                ></SlideCard>
-              </SwiperSlide>
-            </>
+            <SwiperSlide key={index} className="cursor-pointer ">
+              <SlideCard
+                image={item.image}
+                instructorName={item.instructorName}
+                modalContent={item.videoSrc}
+                title={item.title}
+              ></SlideCard>
+            </SwiperSlide>
           )
         })}
       </Swiper>
@@ -134,7 +140,7 @@ function SlideCard({ image, instructorName, title, modalContent }) {
           <span className="text-xs">{instructorName}</span>
         </article>
 
-        <TransitionModal isOpen={isOpen} onClose={closeModal}>
+        <TransitionModal isOpen={isOpen} onClose={closeModal} isLoaderNeeded={false}>
           <div className="relative flex flex-col items-center justify-center text-4xl">
             <div
               className="flex items-center justify-center w-full h-full text-center"
