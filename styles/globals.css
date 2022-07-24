@@ -3,33 +3,74 @@
 @tailwind utilities;
 
 @layer base {
-    html,
-    body {
-        @apply text-base text-black font-normal leading-[150%];
-    }
-    h1 {
-        @apply text-6xl font-extrabold leading-[79.2px];
-    }
+  html,
+  body {
+    @apply text-base font-normal text-black;
+  }
+  h1 {
+    @apply text-5xl font-extrabold lg:text-6xl;
+  }
 
-    h2 {
-        @apply text-[44px] font-bold mb-8 leading-[48.4px];
-    }
+  h2 {
+    @apply mb-8 text-3xl font-bold lg:text-5xl;
+  }
 
-    h3 {
-        @apply text-4xl font-medium leading-[44px];
-    }
+  h3 {
+    @apply text-2xl font-medium lg:text-4xl;
+  }
 
-    h4 {
-        @apply text-2xl font-bold leading-8;
-    }
+  h4 {
+    @apply text-xl font-bold lg:text-2xl;
+  }
 
-    h5 {
-        @apply text-lg font-medium leading-6;
-    }
+  h5 {
+    @apply text-lg font-medium;
+  }
 }
 
 @layer components {
-    .primary-btn {
-        @apply w-16 px-8 py-2 mb-5 text-white bg-pink-400 rounded-full cursor-pointer;
-    }
+  .primary-btn {
+    @apply flex items-center justify-center py-1.5 mb-5 text-white bg-pink-400 rounded-full cursor-pointer w-44;
+  }
+}
+
+@layer utilities {
+  .bg-custom {
+    background-image: linear-gradient(
+        90deg,
+        rgba(187, 0, 75, 1),
+        rgba(187, 0, 75, 1),
+        rgba(187, 0, 75, 1),
+        rgba(187, 0, 75, 1),
+        rgba(187, 0, 75, 0.9),
+        rgba(255, 252, 190, 0.4),
+        transparent,
+        transparent,
+        transparent
+      ),
+      url('/assets/images/subsCover.png');
+  }
+
+  .bg-custom-mobile {
+    background-image: linear-gradient(
+        0deg,
+        rgba(187, 0, 75, 1),
+        rgba(187, 0, 75, 1),
+        rgba(187, 0, 75, 1),
+        rgba(187, 0, 75, 1),
+        rgba(187, 0, 75, 0.9),
+        rgba(255, 252, 190, 0.4),
+        transparent,
+        transparent,
+        transparent
+      ),
+      url('/assets/images/subsCover.png');
+  }
+
+  .divide-dot {
+    @apply list-disc list-inside;
+  }
+  .divide-dot li:first-child {
+    @apply list-none;
+  }
 }
