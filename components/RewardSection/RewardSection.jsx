@@ -20,9 +20,9 @@ export default function RewardSection({ title, descriptions }) {
                   <p
                     key={index}
                     className={clsx(
-                      'flex font-semibold capitalize',
+                      'flex font-semibold capitalize items-center',
                       index === 0 && 'text-left',
-                      index === 1 && 'text-center lg:justify-center',
+                      index === 1 && 'justify-center',
                       index === 2 && 'text-center lg:justify-end w-5/6 ml-auto lg:w-full'
                     )}
                   >

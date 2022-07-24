@@ -54,7 +54,7 @@ export default function PromotionSection({ title, promoTionData = [] }) {
             <div className="block lg:hidden">
               {promoTionData.map((item, index) => {
                 return (
-                  <Disclosure key={index} as="div" className="flex flex-col">
+                  <Disclosure key={index} as="div" className="flex flex-col" defaultOpen={index === 0 ? true : false}>
                     {({ open }) => (
                       <>
                         <Disclosure.Button>

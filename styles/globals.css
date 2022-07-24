@@ -39,6 +39,11 @@
     background-image: url('/assets/images/subscriber_bg.png');
   }
 
+  .custom-hero {
+    -webkit-mask-image: url('/assets/images/hero_2.png');
+    mask-image: url('/assets/images/hero_2.png');
+  }
+
   .bg-custom {
     background-image: linear-gradient(
         90deg,

@@ -13,15 +13,17 @@ export default function LearnAndEarn({ title, description, slides = [] }) {
   return (
     <section className="bg-pink-50">
       <VerticalContainer>
-        <section className="">
-          <article className="">
-            <h2 className="mb-6">{title}</h2>
-            <p>{description}</p>
-          </article>
-          <div className="">
-            <Slider slides={slides} title={title} description={description}></Slider>
-          </div>
-        </section>
+        <CenterWrapper>
+          <section className="grid grid-cols-1 gap-4 lg:grid-cols-4">
+            <article className="col-span-1">
+              <h2 className="mb-6">{title}</h2>
+              <p>{description}</p>
+            </article>
+            <div className="col-span-3">
+              <Slider slides={slides} title={title} description={description}></Slider>
+            </div>
+          </section>
+        </CenterWrapper>
         {/* <section className="grid grid-cols-1 lg:grid-cols-4 lg:pl-[200px]">
           <article className="px-4 mb-10 lg:col-span-1 lg:px-0 lg:pr-5 lg:mb-0">
             <h2 className="mb-6">{title}</h2>
@@ -48,7 +50,7 @@ function Slider({ slides, title, description }) {
         slidesPerView={1.2}
         breakpoints={{
           640: {
-            slidesPerView: 2.5,
+            slidesPerView: 2.4,
             spaceBetween: 30,
           },
         }}
@@ -90,17 +92,22 @@ function Slider({ slides, title, description }) {
           )
         })}
       </Swiper>
-      <div className="flex justify-center pt-5 space-x-3 lg:justify-end lg:pt-10 lg:pr-20">
-        <span className="grid p-2 border rounded-full cursor-pointer border-cyan-900 place-items-center " ref={prevRef}>
-          <FiChevronLeft className="text-cyan-900" />
-        </span>
-        <span
-          className="grid p-2 border rounded-full cursor-pointer border-cyan-900 place-items-center nextBtn"
-          ref={nextRef}
-        >
-          <FiChevronRight className="text-cyan-900" />
-        </span>
-      </div>
+      <CenterWrapper>
+        <div className="flex justify-center pt-5 space-x-3 lg:justify-end lg:pt-10">
+          <span
+            className="grid p-2 border rounded-full cursor-pointer border-cyan-900 place-items-center "
+            ref={prevRef}
+          >
+            <FiChevronLeft className="text-cyan-900" />
+          </span>
+          <span
+            className="grid p-2 border rounded-full cursor-pointer border-cyan-900 place-items-center nextBtn"
+            ref={nextRef}
+          >
+            <FiChevronRight className="text-cyan-900" />
+          </span>
+        </div>
+      </CenterWrapper>
     </section>
   )
 }
