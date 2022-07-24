@@ -9,9 +9,13 @@ export default function SubscriberWrapper({ title, description }) {
             <CenterWrapper>
                 <section
                     style={{
-                        backgroundImage: "",
+                        backgroundImage:
+                            "linear-gradient(90deg, rgba(187, 0, 75, 1), rgba(187, 0, 75, 1), rgba(255, 252, 178, 1), transparent, transparent), url('/assets/images/subsCover.png')",
+                        backgroundPosition: "right",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
                     }}
-                    className="py-16 bg-right bg-no-repeat bg-cover rounded-md px-14 lg:bg-[url('/assets/images/subsImage.png')]"
+                    className="py-16 bg-right bg-no-repeat bg-cover rounded-md px-14 "
                 >
                     <div className="">
                         <article className="mb-8 text-white lg:w-1/2">
@@ -42,3 +46,7 @@ export default function SubscriberWrapper({ title, description }) {
         </VerticalContainer>
     );
 }
+
+// linear-gradient(90deg, rgba(187, 0, 75, 1), rgba(187, 0, 75, 1), rgba(255, 252, 178, 1), transparent, transparent), url('/assets/images/subsCover.png')
+
+// lg:bg-[url('/assets/images/subsImage.png')]

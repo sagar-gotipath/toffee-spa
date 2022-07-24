@@ -1,4 +1,4 @@
-import { Tab } from "@headlessui/react";
+import { Tab, Disclosure, Transition } from "@headlessui/react";
 import clsx from "clsx";
 import CenterWrapper from "../shared/CenterWrapper";
 import Title from "../shared/Title";
@@ -11,7 +11,7 @@ export default function PromotionSection({ title, promoTionData = [] }) {
                     <article>
                         <Title>{title}</Title>
                     </article>
-                    <div className="">
+                    <div className="hidden lg:block">
                         <Tab.Group as="div" className="flex">
                             <Tab.List className="flex flex-col flex-1 ">
                                 {promoTionData.map((item, index) => {
@@ -27,16 +27,16 @@ export default function PromotionSection({ title, promoTionData = [] }) {
                                                     className={clsx(
                                                         " py-8 px-4 border-b-2 border-zinc-700 last:bottom-0 transition-all relative",
                                                         selected
-                                                            ? "bg-black border-l-[6px] border-b-zinc-700 border-pink-500"
+                                                            ? "bg-black border-l-[6px] border-transparent border-l-pink-500"
                                                             : "bg-neutral-800",
                                                         selected &&
                                                             "before:left-full before:content-[''] before:absolute before:border-t-[12px] before:border-t-transparent before:border-l-[20px] before:border-l-black before:border-b-[12px] before:border-b-transparent before:top-1/2 before:-translate-y-1/2"
                                                     )}
                                                 >
-                                                    <h4 className="text-white text-left">
+                                                    <h4 className="text-left text-white">
                                                         {item.title}
                                                     </h4>
-                                                    <p className="text-white text-left">
+                                                    <p className="text-left text-white">
                                                         {item.description}
                                                     </p>
                                                 </article>
@@ -59,6 +59,63 @@ export default function PromotionSection({ title, promoTionData = [] }) {
                                 })}
                             </Tab.Panels>
                         </Tab.Group>
+                    </div>
+
+                    {/* mobile version */}
+
+                    <div className="block lg:hidden">
+                        {promoTionData.map((item, index) => {
+                            return (
+                                <Disclosure
+                                    key={index}
+                                    as="div"
+                                    className="flex flex-col"
+                                >
+                                    {({ open }) => (
+                                        <>
+                                            <Disclosure.Button>
+                                                <article
+                                                    className={clsx(
+                                                        " py-8 px-4 border-b-2 border-zinc-700 last:bottom-0 transition-all relative ",
+                                                        open
+                                                            ? "bg-black border-t-[6px] border-transparent border-t-pink-500"
+                                                            : "bg-neutral-800",
+                                                        open &&
+                                                            "before:content-[''] before:absolute before:border-x-[12px] before:border-x-transparent before:border-t-[20px] before:border-t-black before:left-1/2 before:top-full z-20 before:w-0 before:h-0 before:-translate-x-1/2"
+                                                    )}
+                                                >
+                                                    <h4 className="mb-2 text-center text-white">
+                                                        {item.title}
+                                                    </h4>
+                                                    {open && (
+                                                        <p className="text-center text-white">
+                                                            {item.description}
+                                                        </p>
+                                                    )}
+                                                </article>
+                                            </Disclosure.Button>
+
+                                            <Transition
+                                                enter="transition duration-100 ease-out"
+                                                enterFrom="transform scale-95 opacity-0"
+                                                enterTo="transform scale-100 opacity-100"
+                                                leave="transition duration-75 ease-out"
+                                                leaveFrom="transform scale-100 opacity-100"
+                                                leaveTo="transform scale-95 opacity-0"
+                                            >
+                                                <Disclosure.Panel>
+                                                    <img
+                                                        src={item.image}
+                                                        alt="promotion image"
+                                                        className="w-full h-[488px] object-cover"
+                                                    />
+                                                </Disclosure.Panel>
+                                            </Transition>
+                                        </>
+                                    )}
+                                </Disclosure>
+                            );
+                        })}
                     </div>
                 </section>
             </CenterWrapper>

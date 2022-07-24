@@ -27,7 +27,7 @@ export default function RewardSection({ title, descriptions }) {
                                             index === 1 &&
                                                 "text-center lg:justify-center",
                                             index === 2 &&
-                                                "text-center lg:justify-end"
+                                                "text-center lg:justify-end w-5/6 ml-auto lg:w-full"
                                         )}
                                     >
                                         <span className="">{item}</span>
