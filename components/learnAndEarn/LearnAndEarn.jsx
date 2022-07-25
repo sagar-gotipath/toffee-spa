@@ -12,10 +12,10 @@ import TransitionModal from '../shared/TransitionModal'
 export default function LearnAndEarn({ title, description, slides = [] }) {
   return (
     <VerticalContainer className="relative overflow-x-hidden bg-pink-50">
-      <div className="absolute inset-y-0 z-10 hidden w-1/3 -ml-8 lg:block bg-pink-50"></div>
+      <div className="absolute left-0 inset-y-0 z-10 hidden lg:-ml-[70px] xl:-ml-[75px] 2xl:-ml-[90px] lg:w-1/3 xl:w-[35%] 2xl:w-[38%]  lg:block bg-pink-50"></div>
       <CenterWrapper>
-        <section className="grid grid-cols-1 gap-4 lg:grid-cols-4">
-          <article className="relative z-10">
+        <section className="grid grid-cols-1 gap-5 lg:grid-cols-4">
+          <article className="relative z-10 col-span-1">
             <h2 className="mb-6">{title}</h2>
             <p>{description}</p>
           </article>
@@ -24,20 +24,6 @@ export default function LearnAndEarn({ title, description, slides = [] }) {
           </div>
         </section>
       </CenterWrapper>
-      {/* <section className="sm:flex">
-          <div className="sm:w-1/2">
-            <div className="px-5 mx-auto sm:pl-40 sm:pr-10">
-              <article className="mb-6">
-                <h2 className="mb-6">{title}</h2>
-                <p>{description}</p>
-              </article>
-            </div>
-          </div>
-
-          <div className="w-full px-5 mx-auto overflow-hidden sm:flex-1">
-            <Slider slides={slides} title={title} description={description}></Slider>
-          </div>
-        </section> */}
     </VerticalContainer>
   )
 }

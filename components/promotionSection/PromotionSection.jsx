@@ -41,7 +41,11 @@ export default function PromotionSection({ title, promoTionData = [] }) {
                   {promoTionData.map((item, index) => {
                     return (
                       <Tab.Panel key={index}>
-                        <img src={item.image} alt="promotion image" className="w-full lg:h-[504px] object-cover" />
+                        <img
+                          src={item.image}
+                          alt="promotion image"
+                          className="w-full lg:h-[504px] object-cover transition"
+                        />
                       </Tab.Panel>
                     )
                   })}

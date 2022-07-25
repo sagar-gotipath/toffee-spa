@@ -42,9 +42,9 @@ export default function SubPage() {
                   </div>
                 </div>
               ) : (
-                <>
+                <div className="flex flex-col items-center justify-center h-96 mt-14">
                   <h1 className="mb-10 text-center capitalize">{title} page</h1>
-                  <p className="my-14">
+                  <p className="mb-16 mt-14">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, voluptatem quam ea earum expedita
                     molestiae officiis rerum ratione molestias quasi vitae quisquam ullam tempore provident. Expedita,
                     vitae? Harum, mollitia autem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
@@ -61,7 +61,7 @@ export default function SubPage() {
                     ratione molestias quasi vitae quisquam ullam tempore provident. Expedita, vitae? Harum, mollitia
                     autem!
                   </p>
-                </>
+                </div>
               )}
               <div className="flex justify-center">
                 <Link href="/">
