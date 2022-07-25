@@ -43,12 +43,13 @@
   }
 
   .bg-hero {
+    background-image: url('/assets/video/toffee.mp4');
   }
 
-  .custom-hero {
+  /* .custom-hero {
     -webkit-mask-image: url('/assets/images/hero_2.png');
     mask-image: url('/assets/images/hero_2.png');
-  }
+  } */
 
   .bg-custom {
     background-image: linear-gradient(

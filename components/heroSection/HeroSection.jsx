@@ -12,11 +12,9 @@ export default function HeroSection({ title, descriptions, heroImage }) {
             </article>
           </div>
           <div className="flex-1">
-            <div className="absolute lg:-right-14 lg:top-0">
-              <video muted autoPlay loop width="850">
-                <source src="/assets/video/toffee.mp4" type="video/mp4" />
-              </video>
-            </div>
+            <video muted autoPlay loop width="920" className="absolute lg:-right-[10%] lg:-top-[10%] pr-5 lg:pr-0">
+              <source src="/assets/video/toffee.mp4" type="video/mp4" />
+            </video>
           </div>
         </section>
       </CenterWrapper>
