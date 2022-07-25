@@ -61,9 +61,9 @@ export default function Layout({ children, menu = null, footerMenu = null }) {
 
   // footer social links
   const footerSocial = [
-    { name: 'facebook', href: 'https://www.facebook.com' },
-    { name: 'twitter', href: 'https://www.facebook.com' },
-    { name: 'linkedin', href: 'https://www.facebook.com' },
+    { name: 'facebook', href: 'https://www.facebook.com/Toffee.Bangladesh/' },
+    { name: 'twitter', href: 'https://bd.linkedin.com/company/toffeelive' },
+    { name: 'linkedin', href: 'https://bd.linkedin.com/company/toffeelive' },
   ]
 
   return (

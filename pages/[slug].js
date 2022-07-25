@@ -20,30 +20,30 @@ export default function SubPage() {
         <main className="mt-14">
           <VerticalContainer>
             <CenterWrapper>
-              <h1 className="mb-10 text-center capitalize">{title} page</h1>
               {title === 'download' ? (
-                <div className="flex justify-center space-x-3">
-                  {/* <Link href="https://play.google.com/store/apps/details?id=com.banglalink.toffee" target="_blank"> */}
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.banglalink.toffee"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img src="/assets/images/google_play.png" alt="google play image" />
-                  </a>
-                  {/* </Link> */}
-                  {/* <Link href="https://apps.apple.com/us/app/toffee-tv-sports-and-drama/id1499048052"> */}
-                  <a
-                    href="https://apps.apple.com/us/app/toffee-tv-sports-and-drama/id1499048052"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img src="/assets/images/app_store.png" alt="google play image" />
-                  </a>
-                  {/* </Link> */}
+                <div className="flex flex-col items-center justify-center space-x-3 h-96">
+                  <h1 className="mb-10 text-center capitalize">{title} toffee app</h1>
+                  <div className="flex space-x-4">
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.banglalink.toffee"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img src="/assets/images/google_play.png" alt="google play image" />
+                    </a>
+
+                    <a
+                      href="https://apps.apple.com/us/app/toffee-tv-sports-and-drama/id1499048052"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img src="/assets/images/app_store.png" alt="google play image" />
+                    </a>
+                  </div>
                 </div>
               ) : (
                 <>
+                  <h1 className="mb-10 text-center capitalize">{title} page</h1>
                   <p className="my-14">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, voluptatem quam ea earum expedita
                     molestiae officiis rerum ratione molestias quasi vitae quisquam ullam tempore provident. Expedita,
@@ -63,9 +63,11 @@ export default function SubPage() {
                   </p>
                 </>
               )}
-              <Link href="/">
-                <a className="mt-10 capitalize primary-btn">return to home</a>
-              </Link>
+              <div className="flex justify-center">
+                <Link href="/">
+                  <a className="mt-10 capitalize primary-btn">return to home</a>
+                </Link>
+              </div>
             </CenterWrapper>
           </VerticalContainer>
         </main>

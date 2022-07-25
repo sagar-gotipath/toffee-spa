@@ -26,7 +26,7 @@ export default function Home() {
       </Head>
       <Layout>
         <HeroSection
-          title="TOFFEE Creators’ Platform"
+          title="TOFFEE Creators Platform"
           descriptions="The first Bangladeshi Creators’ Platform is now live on TOFFEE! Create your channel, upload your original videos, and enjoy the perks of being a creator on TOFFEE. "
         />
 
