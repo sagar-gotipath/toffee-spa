@@ -15,16 +15,24 @@ export default function SubscriberWrapper({ title, description }) {
                 <p>{description}</p>
               </article>
               <div className="flex justify-center space-x-3 lg:justify-start">
-                <Link href="/">
-                  <a>
-                    <img src="/assets/images/google_play.png" alt="google play image" />
-                  </a>
-                </Link>
-                <Link href="/">
-                  <a>
-                    <img src="/assets/images/app_store.png" alt="google play image" />
-                  </a>
-                </Link>
+                {/* <Link href="https://play.google.com/store/apps/details?id=com.banglalink.toffee" target="_blank"> */}
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.banglalink.toffee"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src="/assets/images/google_play.png" alt="google play image" />
+                </a>
+                {/* </Link> */}
+                {/* <Link href="https://apps.apple.com/us/app/toffee-tv-sports-and-drama/id1499048052"> */}
+                <a
+                  href="https://apps.apple.com/us/app/toffee-tv-sports-and-drama/id1499048052"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src="/assets/images/app_store.png" alt="google play image" />
+                </a>
+                {/* </Link> */}
               </div>
             </div>
           </section>

@@ -98,10 +98,10 @@ function Slider({ slides }) {
       </Swiper>
       <div className="flex justify-center pt-5 space-x-3 lg:justify-end lg:pt-10">
         <button className="border rounded-full cursor-pointer border-cyan-900 place-items-center" ref={prevRef}>
-          <FiChevronLeft className="w-5 h-5 text-cyan-900" />
+          <FiChevronLeft className="w-7 h-7 text-cyan-900" />
         </button>
         <button className="border rounded-full cursor-pointer border-cyan-900 place-items-center" ref={nextRef}>
-          <FiChevronRight className="w-5 h-5 text-cyan-900" />
+          <FiChevronRight className="w-7 h-7 text-cyan-900" />
         </button>
       </div>
     </>
