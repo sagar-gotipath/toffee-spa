@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Tab, Disclosure, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 import CenterWrapper from '../shared/CenterWrapper'
@@ -46,6 +47,8 @@ export default function PromotionSection({ title, promoTionData = [] }) {
                           alt="promotion image"
                           className="w-full lg:h-[504px] object-cover transition"
                         />
+
+                        {/* <Image src={item.image} alt={item.title} width={592} height={504} layout="responsive" /> */}
                       </Tab.Panel>
                     )
                   })}
