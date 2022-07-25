@@ -57,11 +57,15 @@ function GuideCard({ title, description, coverImage, isClickable }) {
     return (
       <>
         <div
-          className="relative overflow-hidden rounded-lg shadow-md cursor-pointer bg-pink-50 group min-h-[240px] lg:cursor-default"
+          className="relative overflow-hidden rounded-lg shadow-md cursor-pointer bg-pink-50 group min-h-[245px] lg:cursor-default"
           onClick={openModal}
         >
-          <section className=" bg-white absolute inset-0 opacity-100 group-hover:opacity-0 group-hover:z-[0] transition-all duration-300">
-            <img src={coverImage} alt="guideline cover image" className="w-full " />
+          <section className="absolute inset-0 transition-all duration-300 bg-white opacity-100">
+            <img
+              src={coverImage}
+              alt="guideline cover image"
+              className="w-full max-h-[75%] md:max-h-[68%] lg:max-h-auto object-cover"
+            />
             <h4 className="p-5">{title}</h4>
           </section>
         </div>
@@ -80,10 +84,10 @@ function GuideCard({ title, description, coverImage, isClickable }) {
     <div className="relative overflow-hidden rounded-lg shadow-md cursor-pointer bg-pink-50 group min-h-[240px] lg:cursor-default">
       <article className="p-5">
         <h4 className="mb-3">{title}</h4>
-        <p className="mb-3 lg:mb-14">{description}</p>
+        <p className="">{description}</p>
       </article>
       <section className=" bg-white absolute inset-0 opacity-100 group-hover:opacity-0 group-hover:z-[0] transition-all duration-300">
-        <img src={coverImage} alt="guideline cover image" className="w-full " />
+        <img src={coverImage} alt="guideline cover image" className="object-cover w-full h-[75%]" />
         <h4 className="p-5">{title}</h4>
       </section>
     </div>

@@ -53,7 +53,7 @@ export default function RewardSection({ title, descriptions }) {
                   <h5 className="text-center ">
                     <span>{item.subscriber}</span>
                   </h5>
-                  <h5 className="text-center lg:text-right">
+                  <h5 className="text-center lg:text-right lg:pr-10">
                     <span>{item.watchTime}</span>
                   </h5>
                 </section>

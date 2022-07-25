@@ -11,46 +11,50 @@ import TransitionModal from '../shared/TransitionModal'
 
 export default function LearnAndEarn({ title, description, slides = [] }) {
   return (
-    <section className="bg-pink-50">
-      <VerticalContainer>
-        <CenterWrapper>
-          <section className="grid grid-cols-1 gap-4 lg:grid-cols-4">
-            <article className="col-span-1">
-              <h2 className="mb-6">{title}</h2>
-              <p>{description}</p>
-            </article>
-            <div className="col-span-3">
-              <Slider slides={slides} title={title} description={description}></Slider>
-            </div>
-          </section>
-        </CenterWrapper>
-        {/* <section className="grid grid-cols-1 lg:grid-cols-4 lg:pl-[200px]">
-          <article className="px-4 mb-10 lg:col-span-1 lg:px-0 lg:pr-5 lg:mb-0">
+    <VerticalContainer className="relative overflow-x-hidden bg-pink-50">
+      <div className="absolute inset-y-0 z-10 hidden w-1/3 -ml-8 lg:block bg-pink-50"></div>
+      <CenterWrapper>
+        <section className="grid grid-cols-1 gap-4 lg:grid-cols-4">
+          <article className="relative z-10">
             <h2 className="mb-6">{title}</h2>
             <p>{description}</p>
           </article>
+          <div className="col-span-3">
+            <Slider slides={slides} title={title} description={description}></Slider>
+          </div>
+        </section>
+      </CenterWrapper>
+      {/* <section className="sm:flex">
+          <div className="sm:w-1/2">
+            <div className="px-5 mx-auto sm:pl-40 sm:pr-10">
+              <article className="mb-6">
+                <h2 className="mb-6">{title}</h2>
+                <p>{description}</p>
+              </article>
+            </div>
+          </div>
 
-          <div className="lg:col-span-3">
+          <div className="w-full px-5 mx-auto overflow-hidden sm:flex-1">
             <Slider slides={slides} title={title} description={description}></Slider>
           </div>
         </section> */}
-      </VerticalContainer>
-    </section>
+    </VerticalContainer>
   )
 }
 
-function Slider({ slides, title, description }) {
+function Slider({ slides }) {
   const prevRef = useRef(null)
   const nextRef = useRef(null)
 
   return (
-    <section>
+    <>
       <Swiper
-        spaceBetween={16}
+        className="!overflow-visible"
+        spaceBetween={15}
         slidesPerView={1.2}
         breakpoints={{
           640: {
-            slidesPerView: 2.4,
+            slidesPerView: 2,
             spaceBetween: 30,
           },
         }}
@@ -81,7 +85,7 @@ function Slider({ slides, title, description }) {
       >
         {slides.map((item, index) => {
           return (
-            <SwiperSlide key={index} className="cursor-pointer ">
+            <SwiperSlide key={index} className="cursor-pointer">
               <SlideCard
                 image={item.image}
                 instructorName={item.instructorName}
@@ -92,23 +96,15 @@ function Slider({ slides, title, description }) {
           )
         })}
       </Swiper>
-      <CenterWrapper>
-        <div className="flex justify-center pt-5 space-x-3 lg:justify-end lg:pt-10">
-          <span
-            className="grid p-2 border rounded-full cursor-pointer border-cyan-900 place-items-center "
-            ref={prevRef}
-          >
-            <FiChevronLeft className="text-cyan-900" />
-          </span>
-          <span
-            className="grid p-2 border rounded-full cursor-pointer border-cyan-900 place-items-center nextBtn"
-            ref={nextRef}
-          >
-            <FiChevronRight className="text-cyan-900" />
-          </span>
-        </div>
-      </CenterWrapper>
-    </section>
+      <div className="flex justify-center pt-5 space-x-3 lg:justify-end lg:pt-10">
+        <button className="border rounded-full cursor-pointer border-cyan-900 place-items-center" ref={prevRef}>
+          <FiChevronLeft className="w-5 h-5 text-cyan-900" />
+        </button>
+        <button className="border rounded-full cursor-pointer border-cyan-900 place-items-center" ref={nextRef}>
+          <FiChevronRight className="w-5 h-5 text-cyan-900" />
+        </button>
+      </div>
+    </>
   )
 }
 
@@ -125,10 +121,7 @@ function SlideCard({ image, instructorName, title, modalContent }) {
   }
   return (
     <>
-      <div
-        className="flex flex-col justify-between flex-1 rounded-lg cursor-pointer bg-fuchsia-100"
-        onClick={openModal}
-      >
+      <div className="flex flex-col justify-between rounded-lg cursor-pointer bg-fuchsia-100 " onClick={openModal}>
         <div className="relative ">
           <img
             src={image}

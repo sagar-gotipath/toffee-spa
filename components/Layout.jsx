@@ -55,7 +55,7 @@ export default function Layout({ children, menu = null, footerMenu = null }) {
     {
       title: 'monetization policy',
       type: 'normalmenu',
-      href: '/policy',
+      href: '/monetization-policy',
     },
   ]
 
