@@ -5,7 +5,7 @@ import DropdownMenu from './nav/DropdownMenu.jsx'
 import Logo from './nav/Logo.jsx'
 import NormalMenu from './nav/NormalMenu.jsx'
 import MobileDropdown from './nav/MobileDropdown.jsx'
-import MegaMenuTransitionCollapse from './nav/MegaMenuTransition.jsx'
+import MegaMenuTransitionCollapse, { MobileLink } from './nav/MegaMenuTransition.jsx'
 import { GlobalContext } from './Layout.jsx'
 import CenterWrapper from './shared/CenterWrapper.jsx'
 
@@ -133,7 +133,7 @@ export default function Header({ logo, navData = [], headerButtons = [] }) {
                       if (menuItem.type === 'megamenu' || menuItem.type === 'dropdown') {
                         return <MobileDropdown title={menuItem.title} items={menuItem.items} key={index} />
                       } else {
-                        return <NormalMenu title={menuItem.title} href={menuItem.href} key={index} />
+                        return <NormalMenu title={menuItem.title} href={menuItem.href} key={index} isMobile={true} />
                       }
                     })}
                   </div>
