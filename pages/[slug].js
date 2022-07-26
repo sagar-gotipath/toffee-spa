@@ -17,7 +17,7 @@ export default function SubPage() {
         <link rel="icon" href="/assets/images/favicon_io/favicon.ico" />
       </Head>
       <Layout>
-        <main className="mt-14 ">
+        <main className="mt-10 lg:mt-14">
           <VerticalContainer>
             <CenterWrapper>
               {title === 'download' ? (
@@ -42,7 +42,7 @@ export default function SubPage() {
                   </div>
                 </div>
               ) : (
-                <div className="flex flex-col items-center justify-center mt-14">
+                <div className="flex flex-col lg:items-center lg:justify-center">
                   <h1 className="mb-10 text-center capitalize">{title} page</h1>
                   <p className="mb-16 mt-14">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, voluptatem quam ea earum expedita
